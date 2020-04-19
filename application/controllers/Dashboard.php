@@ -21,32 +21,4 @@ class Dashboard extends CI_Controller {
          $this->load->view('exs');
     }
 
-
-    public function getcount(){
-		$prod 	= $this->M_dashboard->countproduct();
-        $karyawan   = $this->M_dashboard->countkaryawan();
-        $user   = $this->M_dashboard->countuser();
-		echo json_encode(array(
-			'prod'    => $prod->jml,
-            'karyawan'    => $karyawan->jml,
-            'user'    => $user->jml
-			)
-		);
-	}
-
-    public function gudang(){
-        $prod   = $this->M_dashboard->countproduct();
-        $supplier   = $this->M_dashboard->countsupplier();
-        $total   = $this->M_dashboard->counttotal();
-        $kategori   = $this->M_dashboard->countkategori();
-        $chart   = $this->M_dashboard->countbarangmasuk();
-        echo json_encode(array(
-            'prod'    => $prod->jml,
-            'supplier'    => $supplier->jml,
-            'total'    => $total->jml,
-            'kategori'    => $kategori->jml,
-            'chart'   => $chart
-            )
-        );
-    }
 }
